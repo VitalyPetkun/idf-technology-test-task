@@ -1,4 +1,4 @@
-package utils.api;
+package framework.utils.api;
 
 import io.restassured.response.ValidatableResponse;
 
