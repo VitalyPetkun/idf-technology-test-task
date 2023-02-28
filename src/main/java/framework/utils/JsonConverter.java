@@ -16,8 +16,13 @@ public class JsonConverter {
         return gson;
     }
 
+    public static String getJsonString(Object object) {
+        SmartLogger.logInfo("Converting object to jsonString");
+        return getGson().toJson(object);
+    }
+
     public static <T> T getObject(String jsonString, Class<T> cls) {
-        SmartLogger.logInfo("Converting jsonString to Object");
+        SmartLogger.logInfo("Converting jsonString to object");
         try {
             return getGson().fromJson(jsonString, cls);
         } catch (Throwable e) {

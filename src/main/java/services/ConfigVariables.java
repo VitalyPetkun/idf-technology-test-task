@@ -2,7 +2,9 @@ package services;
 
 public enum ConfigVariables {
 
-    DEMOQA_URI("demoqaUri");
+    DEMOQA_URI("demoqaUri"),
+    USER_NAME("userName"),
+    PASSWORD("password");
 
     private String configVariable;
 
