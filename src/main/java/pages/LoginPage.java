@@ -19,7 +19,7 @@ public class LoginPage extends BaseForm {
         super(LOGIN_PAGE_UNIQ_ELEMENT, "Login page");
     }
 
-    public void clickAndClearUsernameTxtBox() {
+    public void clickAndClearUserNameTxtBox() {
         USER_NAME_TXT_BOX.clickAndClear();
     }
 
