@@ -20,6 +20,10 @@ public class BookStoreApplicationPageSteps {
         return bookStoreApplicationPage.getTextBooksTitlesLnk();
     }
 
+    public static String getUserName() {
+        return bookStoreApplicationPage.getUserName();
+    }
+
     public static void assertIsOpenBookStoreApplicationPage() {
         Assert.assertTrue(bookStoreApplicationPage.isFormOpen(), "Don't open Book Store Application page");
     }

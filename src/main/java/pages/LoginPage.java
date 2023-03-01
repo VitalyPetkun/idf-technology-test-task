@@ -2,12 +2,13 @@ package pages;
 
 import framework.BaseForm;
 import framework.elements.Button;
+import framework.elements.Label;
 import framework.elements.TextBox;
 import org.openqa.selenium.By;
 
 public class LoginPage extends BaseForm {
 
-    private static final TextBox LOGIN_PAGE_UNIQ_ELEMENT = new TextBox(By.xpath("//form[@id='userForm']/div"),
+    private static final Label LOGIN_PAGE_UNIQ_ELEMENT = new Label(By.xpath("//form[@id='userForm']/div"),
             "Login page uniq element");
     private static final TextBox USER_NAME_TXT_BOX = new TextBox(By.xpath("//div[contains(@id,'userName')]/div/input"),
             "User name text box");
