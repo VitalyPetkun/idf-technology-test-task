@@ -19,23 +19,23 @@ public class LoginPage extends BaseForm {
         super(LOGIN_PAGE_UNIQ_ELEMENT, "Login page");
     }
 
-    public static void clickAndClearUsernameTxtBox() {
+    public void clickAndClearUsernameTxtBox() {
         USER_NAME_TXT_BOX.clickAndClear();
     }
 
-    public static void inputTextUserNameTxtBox(String userName) {
+    public void inputTextUserNameTxtBox(String userName) {
         USER_NAME_TXT_BOX.inputText(userName);
     }
 
-    public static void clickAndClearPasswordTxtBox() {
+    public void clickAndClearPasswordTxtBox() {
         PASSWORD_TXT_BOX.clickAndClear();
     }
 
-    public static void inputTextPasswordTxtBox(String password) {
+    public void inputTextPasswordTxtBox(String password) {
         PASSWORD_TXT_BOX.inputText(password);
     }
 
-    public static void clickLoginBtn() {
+    public void clickLoginBtn() {
         LOGIN_BTN.click();
     }
 }

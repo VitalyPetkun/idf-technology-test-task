@@ -5,6 +5,8 @@ import framework.elements.Button;
 import framework.elements.Link;
 import org.openqa.selenium.By;
 
+import java.util.List;
+
 public class BookStoreApplicationPage extends BaseForm {
 
     private static final Button BOOK_STORE_APPLICATION_PAGE_UNIQ_ELEMENT = new Button(
@@ -17,11 +19,11 @@ public class BookStoreApplicationPage extends BaseForm {
         super(BOOK_STORE_APPLICATION_PAGE_UNIQ_ELEMENT, "Book Store Application page");
     }
 
-    public static void clickLoginBtn() {
+    public void clickLoginBtn() {
         LOGIN_BTN.click();
     }
 
-    public static String getTextBooksTitlesLnk() {
-        return BOOKS_TITLES_LNK.getText();
+    public List<String> getTextBooksTitlesLnk() {
+        return this.getElementsText(BOOKS_TITLES_LNK.getLocator());
     }
 }
