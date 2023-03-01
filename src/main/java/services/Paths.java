@@ -2,7 +2,7 @@ package services;
 
 public enum Paths {
 
-    CONFIG_PROPERTIES_PATHS("src\\main\\resources\\");
+    TEST_RESOURCES_PATHS("src\\test\\resources\\");
 
     private String path;
 

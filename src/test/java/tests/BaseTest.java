@@ -10,8 +10,6 @@ public class BaseTest {
 
     @BeforeMethod
     protected void setup() {
-        Browser.setMaximizeWindow();
-        Browser.timeouts();
         ApiUtils.setupBaseUri(Uri.DEMOQA_URI.getUri());
     }
 

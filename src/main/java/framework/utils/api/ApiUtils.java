@@ -25,4 +25,9 @@ public class ApiUtils {
         return new Response(given().accept(contentType).contentType(contentType).
                 body(body).when().post(endPoint).then());
     }
+
+    protected static Response doDelete(ContentType contentType, String endPoint) {
+        SmartLogger.logInfo("Delete request ".concat(baseURI).concat(endPoint));
+        return new Response(given().accept(contentType).when().delete(endPoint).then());
+    }
 }

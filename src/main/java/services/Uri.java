@@ -5,7 +5,7 @@ import framework.utils.PropertiesManager;
 public enum Uri {
 
     DEMOQA_URI(PropertiesManager.getValue(
-            Paths.CONFIG_PROPERTIES_PATHS.getPath(),
+            Paths.TEST_RESOURCES_PATHS.getPath(),
             Files.CONFIG_PROPERTIES.getFile(),
             ConfigVariables.DEMOQA_URI.getConfigVariable()));
 

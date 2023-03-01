@@ -12,7 +12,7 @@ public class BookStoreApplicationPageSteps {
     private BookStoreApplicationPageSteps() {
     }
 
-    public static void click() {
+    public static void clickLoginBtn() {
         bookStoreApplicationPage.clickLoginBtn();
     }
 
