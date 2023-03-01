@@ -13,7 +13,7 @@ public class BookStoreApplicationPage extends BaseForm {
     private static final Button LOGIN_BTN = new Button(By.xpath("//button[@id='login']"), "Login button");
     private static final Link BOOKS_TITLES_LNK = new Link(By.xpath("//div[contains(@class,'td')]//span/a"), "Books titles link");
 
-    private BookStoreApplicationPage() {
+    public BookStoreApplicationPage() {
         super(BOOK_STORE_APPLICATION_PAGE_UNIQ_ELEMENT, "Book Store Application page");
     }
 

@@ -13,7 +13,7 @@ public class HomePage extends BaseForm {
             By.xpath("//div/h5[contains(text(),'Book Store')]"), "Book Store Application button");
 
 
-    private HomePage() {
+    public HomePage() {
         super(HOME_PAGE_UNIQ_ELEMENT, "Home page");
     }
 
