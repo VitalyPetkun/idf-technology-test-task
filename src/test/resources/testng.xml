@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Book Store Application tests">
+    <test name="Account test">
+        <classes>
+            <class name="tests.AccountTest"/>
+        </classes>
+    </test>
+    <test name="Book store test">
+        <classes>
+            <class name="tests.BookStoreTest"/>
+        </classes>
+    </test>
+</suite>
