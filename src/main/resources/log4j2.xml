@@ -8,11 +8,11 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="tests.LaptopsSearchTest" level="debug" additivity="true">
+        <Logger name="Book Store Application" level="debug" additivity="true">
             <AppenderRef ref="Console"/>
         </Logger>
 
-        <Root level="all">
+        <Root level="info">
             <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
