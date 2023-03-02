@@ -9,6 +9,7 @@ import io.restassured.http.ContentType;
 import models.User;
 import org.apache.http.HttpStatus;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import steps.BookStoreApplicationPageSteps;
 import steps.HomePageSteps;
@@ -22,22 +23,26 @@ import static services.Paths.TEST_RESOURCES_PATHS;
 public class AccountTest extends BaseTest {
 
     private int stepNumber;
-    private String userName = PropertiesManager.getValue(TEST_RESOURCES_PATHS.getPath(), CONFIG_PROPERTIES.getFile(),
-            USER_NAME.getConfigVariable());
-    private String password = PropertiesManager.getValue(TEST_RESOURCES_PATHS.getPath(), CONFIG_PROPERTIES.getFile(),
-            PASSWORD.getConfigVariable());
-    private User user = new User(userName, password);
 
-    @Test(priority = 1)
-    protected void accountApiRegistration() {
+    @DataProvider
+    public Object[][] getParameters() {
+        return new Object[][]{
+                {"user", "12Pass!@"},
+                {"01user", "01Pass!@"}
+        };
+    }
+
+    @Test(priority = 1, dataProvider = "getParameters")
+    protected void accountApiRegistration(String userName, String password) {
         stepNumber = 0;
         SmartLogger.logStep(++stepNumber, "Registration user from api request");
+        User user = new User(userName, password);
         Response response = BookStoreApi.registrationUser(ContentType.JSON, JsonConverter.getJsonString(user));
         Assert.assertEquals(response.getStatus(), HttpStatus.SC_CREATED, "User isn't registered");
     }
 
-    @Test(priority = 2)
-    protected void accountAuthorization() {
+    @Test(priority = 2, dataProvider = "getParameters")
+    protected void accountAuthorization(String userName, String password) {
         stepNumber = 0;
         SmartLogger.logStep(++stepNumber, "Go to ".concat(DEMOQA_URI.getConfigVariable()));
         Browser.setMaximizeWindow();
@@ -55,10 +60,10 @@ public class AccountTest extends BaseTest {
         LoginPageSteps.assertIsOpenLoginPage();
 
         SmartLogger.logStep(++stepNumber, "Authorization user from Book Store application");
-        LoginPageSteps.inputUserName(user.getUserName());
-        LoginPageSteps.inputPassword(user.getPassword());
+        LoginPageSteps.inputUserName(userName);
+        LoginPageSteps.inputPassword(password);
         LoginPageSteps.clickLoginBtn();
         BookStoreApplicationPageSteps.assertIsOpenBookStoreApplicationPage();
-        Assert.assertEquals(BookStoreApplicationPageSteps.getUserName(), user.getUserName(), "User name isn't correct ");
+        Assert.assertEquals(BookStoreApplicationPageSteps.getUserName(), userName, "User name isn't correct ");
     }
 }
