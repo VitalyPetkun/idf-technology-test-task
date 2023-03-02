@@ -27,8 +27,8 @@ public class AccountTest extends BaseTest {
     @DataProvider
     public Object[][] getParameters() {
         return new Object[][]{
-                {"user", "12Pass!@"},
-                {"01user", "01Pass!@"}
+                {"02user", "03Pass!@"},
+                {"03user", "03Pass!@"}
         };
     }
 
